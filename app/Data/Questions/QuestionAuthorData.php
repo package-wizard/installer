@@ -18,5 +18,5 @@ class QuestionAuthorData extends QuestionData
     #[WithCast(ArrayWrapCast::class)]
     public array $replace = [':author:'];
 
-    public string $format = ':name: <:email:>';
+    public string $with = ':name: <:email:>';
 }

@@ -29,7 +29,7 @@ class AuthorFiller extends Filler
         return AuthorData::from([
             'id'      => $this->data->id,
             'replace' => $this->data->replace,
-            'format'  => $this->data->format,
+            'with'    => $this->data->with,
             'name'    => $this->name(),
             'email'   => $this->email(),
         ]);

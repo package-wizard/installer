@@ -12,7 +12,7 @@
         {
             "name": "John Doe",
             "email": "john@example.com",
-            "format": ":name: with :email:"
+            "with": ":name: with :email:"
         }
     ]
 }
