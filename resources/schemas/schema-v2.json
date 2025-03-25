@@ -1,7 +1,7 @@
 {
     "$id": "https://package-wizard.com/schemas/schema-v2.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Package Wizard configuration",
+    "title": "Package Wizard",
     "description": "Package Wizard configuration",
     "type": "object",
     "additionalProperties": false,
@@ -14,23 +14,6 @@
             "items": {
                 "$ref": "#/definitions/author"
             }
-        },
-        "variables": {
-            "type": "array",
-            "items": {
-                "anyOf": [
-                    {
-                        "$ref": "#/definitions/variableYear"
-                    },
-                    {
-                        "$ref": "#/definitions/variableYearRange"
-                    },
-                    {
-                        "$ref": "#/definitions/variableDate"
-                    }
-                ]
-            },
-            "additionalProperties": false
         },
         "renames": {
             "type": "array",
@@ -56,6 +39,23 @@
                 "$ref": "#/definitions/replace"
             }
         },
+        "variables": {
+            "type": "array",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/variableYear"
+                    },
+                    {
+                        "$ref": "#/definitions/variableYearRange"
+                    },
+                    {
+                        "$ref": "#/definitions/variableDate"
+                    }
+                ]
+            },
+            "additionalProperties": false
+        },
         "dependencies": {
             "type": "array",
             "items": {
@@ -74,10 +74,10 @@
                         "$ref": "#/definitions/questionLicense"
                     },
                     {
-                        "$ref": "#/definitions/questionAskSelect"
+                        "$ref": "#/definitions/questionAskText"
                     },
                     {
-                        "$ref": "#/definitions/questionAskText"
+                        "$ref": "#/definitions/questionAskSelect"
                     }
                 ]
             },
@@ -111,7 +111,7 @@
                 },
                 "npm": {
                     "type": "boolean",
-                    "default": false
+                    "default": true
                 },
                 "yarn": {
                     "type": "boolean",
@@ -143,14 +143,14 @@
                             "type": "null"
                         }
                     ],
-                    "format": "email",
+                    "with": "email",
                     "default": null
                 },
                 "replace": {
                     "$ref": "#/definitions/valueReplace",
                     "default": ":author:"
                 },
-                "format": {
+                "with": {
                     "type": "string",
                     "default": ":name: <:email:>"
                 }
@@ -161,10 +161,6 @@
             "type": "object",
             "properties": {
                 "type": {
-                    "type": "string",
-                    "const": "rename"
-                },
-                "what": {
                     "type": "string",
                     "enum": [
                         "path",
@@ -180,7 +176,6 @@
             },
             "required": [
                 "type",
-                "what",
                 "source",
                 "target"
             ],
@@ -216,16 +211,6 @@
         "replace": {
             "type": "object",
             "properties": {
-                "id": {
-                    "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ]
-                },
                 "replace": {
                     "$ref": "#/definitions/valueReplace"
                 },
@@ -328,7 +313,7 @@
                     "$ref": "#/definitions/valueReplace",
                     "default": ":date:"
                 },
-                "format": {
+                "with": {
                     "type": "string",
                     "default": "Y-m-d"
                 }
@@ -375,7 +360,7 @@
                                     "type": "null"
                                 }
                             ],
-                            "format": "email",
+                            "with": "email",
                             "default": null
                         }
                     },
@@ -385,7 +370,7 @@
                     "$ref": "#/definitions/valueReplace",
                     "default": ":author:"
                 },
-                "format": {
+                "with": {
                     "type": "string",
                     "default": ":name: <:email:>"
                 }
@@ -417,6 +402,9 @@
                     "$ref": "#/definitions/valueReplace",
                     "default": ":license:"
                 },
+                "key": {
+                    "$ref": "#/definitions/questionLicenseKey"
+                },
                 "file": {
                     "$ref": "#/definitions/questionLicenseFile"
                 }
@@ -424,6 +412,16 @@
             "required": [
                 "type"
             ],
+            "additionalProperties": false
+        },
+        "questionLicenseKey": {
+            "type": "object",
+            "properties": {
+                "replace": {
+                    "$ref": "#/definitions/valueReplace",
+                    "default": ":licenseKey:"
+                }
+            },
             "additionalProperties": false
         },
         "questionLicenseFile": {
@@ -438,6 +436,58 @@
                     "default": ":licensePath:"
                 }
             },
+            "additionalProperties": false
+        },
+        "questionAskText": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "default": null
+                },
+                "condition": {
+                    "$ref": "#/definitions/condition"
+                },
+                "type": {
+                    "type": "string",
+                    "const": "ask"
+                },
+                "prompt": {
+                    "type": "string",
+                    "const": "text"
+                },
+                "question": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "placeholder": {
+                    "type": "string",
+                    "default": ""
+                },
+                "default": {
+                    "oneOf": [
+                        { "type": "string" },
+                        { "type": "integer" }
+                    ],
+                    "default": ""
+                },
+                "replace": {
+                    "$ref": "#/definitions/valueReplace"
+                },
+                "required": {
+                    "type": "boolean",
+                    "default": true
+                },
+                "validation": {
+                    "$ref": "#/definitions/validation"
+                }
+            },
+            "required": [
+                "type",
+                "prompt",
+                "question",
+                "replace"
+            ],
             "additionalProperties": false
         },
         "questionAskSelect": {
@@ -458,154 +508,46 @@
                     "type": "string",
                     "const": "select"
                 },
-                "replace": {
-                    "$ref": "#/definitions/valueReplace"
-                },
                 "question": {
                     "type": "string",
                     "minLength": 1
                 },
                 "options": {
                     "type": "array",
-                    "items": {
-                        "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "integer"
-                            },
-                            {
-                                "type": "object",
-                                "minProperties": 1,
-                                "maxProperties": 1,
-                                "propertyNames": {
-                                    "type": "string"
-                                },
-                                "additionalProperties": {
-                                    "type": "string"
-                                }
-                            }
-                        ]
-                    },
+                    "anyOf": [
+                        { "type": "string" },
+                        { "type": "integer" },
+                        {
+                            "type": "object",
+                            "propertyNames": { "type": "string" },
+                            "additionalProperties": false
+                        }
+                    ],
                     "minItems": 1,
                     "uniqueItems": true,
                     "additionalProperties": false
                 },
                 "default": {
                     "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        }
+                        { "type": "string" },
+                        { "type": "integer" }
                     ]
-                },
-                "required": {
-                    "oneOf": [
-                        {
-                            "type": "boolean"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ]
-                }
-            },
-            "required": [
-                "type",
-                "prompt",
-                "replace",
-                "question",
-                "options"
-            ]
-        },
-        "questionAskText": {
-            "type": "object",
-            "properties": {
-                "id": {
-                    "type": "string",
-                    "default": null
-                },
-                "condition": {
-                    "$ref": "#/definitions/condition"
-                },
-                "type": {
-                    "type": "string",
-                    "const": "ask"
-                },
-                "prompt": {
-                    "type": "string",
-                    "const": "text"
                 },
                 "replace": {
                     "$ref": "#/definitions/valueReplace"
                 },
-                "question": {
-                    "type": "string",
-                    "minLength": 1
-                },
-                "default": {
-                    "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": null
-                },
-                "placeholder": {
-                    "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": null,
-                    "minLength": 0
-                },
-                "regex": {
-                    "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
-                    ],
-                    "default": null
-                },
-                "trim": {
-                    "type": "boolean",
-                    "default": true
-                },
                 "required": {
-                    "oneOf": [
-                        {
-                            "type": "boolean"
-                        },
-                        {
-                            "type": "string"
-                        }
-                    ],
+                    "type": "boolean",
                     "default": true
                 }
             },
             "required": [
                 "type",
                 "prompt",
-                "replace",
-                "question"
-            ],
-            "additionalProperties": false
+                "question",
+                "options",
+                "replace"
+            ]
         },
         "valueReplace": {
             "oneOf": [
@@ -614,15 +556,25 @@
                 },
                 {
                     "type": "array",
-                    "items": [
-                        {
-                            "type": "string"
-                        }
-                    ],
+                    "items": {
+                        "anyOf": [
+                            { "type": "string" },
+                            { "type": "number" }
+                        ]
+                    },
                     "uniqueItems": true,
                     "additionalProperties": false
                 }
             ],
+            "uniqueItems": true,
+            "additionalProperties": false
+        },
+        "validation": {
+            "type": "array",
+            "items": [
+                { "type": "string" }
+            ],
+            "default": null,
             "uniqueItems": true,
             "additionalProperties": false
         },

@@ -22,9 +22,6 @@ class ConfigData extends Data
     #[DataCollectionOf(AuthorData::class)]
     public Collection $authors;
 
-    #[WithCast(VariablesCast::class)]
-    public Collection $variables;
-
     #[DataCollectionOf(RenameData::class)]
     public Collection $renames;
 
@@ -35,6 +32,9 @@ class ConfigData extends Data
 
     #[DataCollectionOf(ReplaceData::class)]
     public Collection $replaces;
+
+    #[WithCast(VariablesCast::class)]
+    public Collection $variables;
 
     #[DataCollectionOf(DependencyData::class)]
     public Collection $dependencies;
