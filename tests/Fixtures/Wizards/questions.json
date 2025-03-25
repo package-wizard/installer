@@ -21,7 +21,7 @@
                 "email": "john@example.com"
             },
             "replace": "{\n            \"name\": \"Andrey Helldar\",\n            \"email\": \"helldar@dragon-code.pro\"\n        }",
-            "format": "{\n            \"name\": \":name:\",\n            \"email\": \":email:\"\n        }"
+            "with": "{\n            \"name\": \":name:\",\n            \"email\": \":email:\"\n        }"
         },
         {
             "type": "author",
@@ -29,7 +29,7 @@
                 "name": "Package Wizard"
             },
             "replace": "{\n            \"name\": \"The Dragon Code\",\n            \"homepage\": \"https://dragon-code.pro\"\n        }",
-            "format": "{\n            \"name\": \":name:\",\n            \"homepage\": \"https://package-wizard.com\"\n        }"
+            "with": "{\n            \"name\": \":name:\",\n            \"homepage\": \"https://package-wizard.com\"\n        }"
         },
         {
             "type": "ask",

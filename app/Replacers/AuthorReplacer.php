@@ -14,7 +14,7 @@ class AuthorReplacer extends Replacer
         return Str::replace(
             [':name:', ':email:'],
             [$this->data->name, $this->data->email],
-            $this->data->format
+            $this->data->with
         );
     }
 }
