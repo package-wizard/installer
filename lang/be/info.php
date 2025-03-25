@@ -28,6 +28,7 @@ return [
 
     'packagist' => 'Пошук на Packagist',
 
-    'copies'   => 'Копии:',
-    'replaces' => 'Замены:',
+    'copies'               => 'Копии:',
+    'replaces'             => 'Замены:',
+    'install_dependencies' => 'Хотите установить зависимости?',
 ];

@@ -28,6 +28,7 @@ return [
 
     'packagist' => 'Auf Packagist suchen',
 
-    'copies'   => 'Kopien:',
-    'replaces' => 'Ersetzt:',
+    'copies'               => 'Kopien:',
+    'replaces'             => 'Ersetzt:',
+    'install_dependencies' => 'Möchten Sie Abhängigkeiten installieren?',
 ];
