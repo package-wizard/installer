@@ -10,7 +10,7 @@
         "clean": true
     },
     "authors": [
-        { },
+        [],
         {
             "name": "John Doe",
             "email": "john@example.com",
@@ -18,7 +18,10 @@
             "with": ":name: <:email:>"
         },
         {
-            "replace": [":foo:", ":bar:"],
+            "replace": [
+                ":foo:",
+                ":bar:"
+            ],
             "with": ":name: <:email:>"
         }
     ],
@@ -58,7 +61,11 @@
             "with": "bar"
         },
         {
-            "replace": ["qwe", "rty", 123],
+            "replace": [
+                "qwe",
+                "rty",
+                123
+            ],
             "with": 12345
         }
     ],
@@ -68,7 +75,10 @@
         },
         {
             "type": "year",
-            "replace": ["%year%", "2021-:year:"]
+            "replace": [
+                "%year%",
+                "2021-:year:"
+            ]
         },
         {
             "type": "yearRange",
@@ -82,7 +92,10 @@
         {
             "type": "yearRange",
             "start": 2021,
-            "replace": ["%year%", 1970]
+            "replace": [
+                "%year%",
+                1970
+            ]
         },
         {
             "type": "date"
@@ -130,7 +143,10 @@
                 "name": "John Doe",
                 "email": "john@example.com"
             },
-            "replace": [":author:", ":foo:"],
+            "replace": [
+                ":author:",
+                ":foo:"
+            ],
             "with": ":name: <:email:>"
         },
         {
@@ -141,7 +157,10 @@
                 "replace": ":licenseKey:"
             },
             "file": {
-                "replace": [":licensePath:", "(LICENSE)"],
+                "replace": [
+                    ":licensePath:",
+                    "(LICENSE)"
+                ],
                 "path": "LICENSE.md"
             }
         },
@@ -178,14 +197,24 @@
             "type": "ask",
             "prompt": "select",
             "question": "Select one of the options",
-            "options": [100, 200, "300", "400"],
+            "options": [
+                100,
+                200,
+                "300",
+                "400"
+            ],
             "replace": ":foo:"
         },
         {
             "type": "ask",
             "prompt": "select",
             "question": "Select one of the options",
-            "options": [100, 200, 300, 400],
+            "options": [
+                100,
+                200,
+                300,
+                400
+            ],
             "replace": ":foo:"
         },
         {

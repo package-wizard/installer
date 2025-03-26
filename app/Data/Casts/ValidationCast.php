@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace PackageWizard\Installer\Data\Casts;
 
 use Illuminate\Support\Str;
