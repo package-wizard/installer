@@ -13,9 +13,10 @@ use PackageWizard\Installer\Data\RenameData;
 use PackageWizard\Installer\Data\ReplaceData;
 use PackageWizard\Installer\Enums\ConditionOperatorEnum;
 use PackageWizard\Installer\Enums\TypeEnum;
-use PackageWizard\Installer\Fillers\AskFiller;
 use PackageWizard\Installer\Fillers\Questions\AuthorFiller;
 use PackageWizard\Installer\Fillers\Questions\LicenseFiller;
+use PackageWizard\Installer\Fillers\Questions\SelectFiller;
+use PackageWizard\Installer\Fillers\Questions\TextFiller;
 use PackageWizard\Installer\Replacers\AskReplacer;
 use PackageWizard\Installer\Replacers\AuthorReplacer;
 use PackageWizard\Installer\Replacers\LicenseReplacer;
@@ -67,9 +68,10 @@ class QuestionsAction extends Action
     protected function getValue(QuestionData $question): array|Data|null
     {
         return match ($question->type) {
-            TypeEnum::Ask     => AskReplacer::get(AskFiller::make(data: $question), true),
             TypeEnum::Author  => AuthorReplacer::get(AuthorFiller::make(data: $question), true),
             TypeEnum::License => LicenseReplacer::get(LicenseFiller::make(data: $question), true),
+            TypeEnum::Select  => AskReplacer::get(SelectFiller::make(data: $question), true),
+            TypeEnum::Text    => AskReplacer::get(TextFiller::make(data: $question), true),
         };
     }
 

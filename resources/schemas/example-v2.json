@@ -10,7 +10,7 @@
         "clean": true
     },
     "authors": [
-        [],
+        { },
         {
             "name": "John Doe",
             "email": "john@example.com",
@@ -170,8 +170,7 @@
                 "operator": "!=",
                 "value": "MIT License"
             },
-            "type": "ask",
-            "prompt": "text",
+            "type": "text",
             "question": "Some question",
             "replace": ":some_answer:",
             "placeholder": "Some kind of auxiliary information"
@@ -181,8 +180,7 @@
                 "for": "author123",
                 "value": "John Doe <john@example.com>"
             },
-            "type": "ask",
-            "prompt": "text",
+            "type": "text",
             "question": "form.question.name",
             "placeholder": "form.eg.name",
             "default": "foo",
@@ -194,8 +192,7 @@
             ]
         },
         {
-            "type": "ask",
-            "prompt": "select",
+            "type": "select",
             "question": "Select one of the options",
             "options": [
                 100,
@@ -206,8 +203,7 @@
             "replace": ":foo:"
         },
         {
-            "type": "ask",
-            "prompt": "select",
+            "type": "select",
             "question": "Select one of the options",
             "options": [
                 100,
@@ -218,8 +214,7 @@
             "replace": ":foo:"
         },
         {
-            "type": "ask",
-            "prompt": "select",
+            "type": "select",
             "question": "Select one of the options",
             "options": {
                 "100": "foo",

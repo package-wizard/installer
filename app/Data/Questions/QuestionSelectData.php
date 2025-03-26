@@ -6,15 +6,12 @@ namespace PackageWizard\Installer\Data\Questions;
 
 use PackageWizard\Installer\Data\Casts\ArrayWrapCast;
 use PackageWizard\Installer\Data\Casts\TranslatableCast;
-use PackageWizard\Installer\Enums\PromptEnum;
 use PackageWizard\Installer\Enums\TypeEnum;
 use Spatie\LaravelData\Attributes\WithCast;
 
-class QuestionAskSelectData extends QuestionData
+class QuestionSelectData extends QuestionData
 {
-    public TypeEnum $type = TypeEnum::Ask;
-
-    public PromptEnum $prompt = PromptEnum::Select;
+    public TypeEnum $type = TypeEnum::Select;
 
     #[WithCast(ArrayWrapCast::class)]
     public array $replace;
