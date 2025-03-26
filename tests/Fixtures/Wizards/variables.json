@@ -21,7 +21,7 @@
         {
             "type": "date",
             "replace": "%date%",
-            "format": "_Y_"
+            "with": "_Y_"
         }
     ]
 }

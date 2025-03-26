@@ -29,7 +29,7 @@ class AuthorFiller extends Filler
         return AuthorData::from([
             'id'      => $this->data->id,
             'replace' => $this->data->replace,
-            'format'  => $this->data->format,
+            'with'    => $this->data->with,
             'name'    => $this->name(),
             'email'   => $this->email(),
         ]);
@@ -42,7 +42,7 @@ class AuthorFiller extends Filler
         }
 
         return text(
-            label   : __('What is your name?'),
+            label   : __('form.question.name'),
             default : (string) $this->git->userName(),
             required: true
         );
@@ -55,7 +55,7 @@ class AuthorFiller extends Filler
         }
 
         return text(
-            label   : __('What is your email?'),
+            label   : __('form.question.email'),
             default: (string) $this->git->userEmail(),
         );
     }

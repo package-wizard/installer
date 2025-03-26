@@ -10,7 +10,7 @@ class WizardInstallData extends Data
 {
     public bool $composer = true;
 
-    public bool $npm = false;
+    public bool $npm = true;
 
     public bool $yarn = false;
 }

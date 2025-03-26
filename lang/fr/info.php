@@ -28,6 +28,7 @@ return [
 
     'packagist' => 'Rechercher sur Packagist',
 
-    'copies'   => 'Copies :',
-    'replaces' => 'Remplace :',
+    'copies'               => 'Copies :',
+    'replaces'             => 'Remplace :',
+    'install_dependencies' => 'Souhaitez-vous installer des dépendances ?',
 ];
