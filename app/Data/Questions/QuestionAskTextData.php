@@ -7,6 +7,7 @@ namespace PackageWizard\Installer\Data\Questions;
 use PackageWizard\Installer\Data\Casts\ArrayWrapCast;
 use PackageWizard\Installer\Data\Casts\ToStringCast;
 use PackageWizard\Installer\Data\Casts\TranslatableCast;
+use PackageWizard\Installer\Data\Casts\ValidationCast;
 use PackageWizard\Installer\Enums\PromptEnum;
 use PackageWizard\Installer\Enums\TypeEnum;
 use Spatie\LaravelData\Attributes\WithCast;
@@ -29,9 +30,8 @@ class QuestionAskTextData extends QuestionData
     #[WithCast(TranslatableCast::class)]
     public string $placeholder = '';
 
-    public ?string $regex = null;
-
-    public bool $trim = true;
-
     public bool|string $required = true;
+
+    #[WithCast(ValidationCast::class)]
+    public ?array $validation = null;
 }
