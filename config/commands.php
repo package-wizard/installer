@@ -21,14 +21,15 @@ return [
         Illuminate\Console\Scheduling\ScheduleFinishCommand::class,
         Illuminate\Foundation\Console\VendorPublishCommand::class,
         LaravelZero\Framework\Commands\StubPublishCommand::class,
+
+        LaravelLang\Publisher\Console\Update::class,
+
+        LicensesCommand::class,
     ],
 
     'remove' => [
         LaravelLang\Publisher\Console\Add::class,
         LaravelLang\Publisher\Console\Remove::class,
         LaravelLang\Publisher\Console\Reset::class,
-        LaravelLang\Publisher\Console\Update::class,
-
-        LicensesCommand::class,
     ],
 ];
