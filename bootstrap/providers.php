@@ -7,6 +7,7 @@ use LaravelLang\Config\ServiceProvider as LocalesConfigServiceProvider;
 use LaravelLang\Lang\ServiceProvider as LangServiceProvider;
 use LaravelLang\Locales\ServiceProvider as LocalesServiceProvider;
 use LaravelLang\Publisher\ServiceProvider as PublisherServiceProvider;
+use PackageWizard\Installer\Plugins\LocalizationPlugin;
 use PackageWizard\Installer\Providers\AppServiceProvider;
 use Spatie\LaravelData\LaravelDataServiceProvider;
 
@@ -18,4 +19,5 @@ return [
     LocalesConfigServiceProvider::class,
     LocalesServiceProvider::class,
     PublisherServiceProvider::class,
+    LocalizationPlugin::class,
 ];
