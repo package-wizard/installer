@@ -67,18 +67,10 @@
             "type": "array",
             "items": {
                 "anyOf": [
-                    {
-                        "$ref": "#/definitions/questionAuthor"
-                    },
-                    {
-                        "$ref": "#/definitions/questionLicense"
-                    },
-                    {
-                        "$ref": "#/definitions/questionAskText"
-                    },
-                    {
-                        "$ref": "#/definitions/questionAskSelect"
-                    }
+                    { "$ref": "#/definitions/questionAuthor" },
+                    { "$ref": "#/definitions/questionLicense" },
+                    { "$ref": "#/definitions/questionText" },
+                    { "$ref": "#/definitions/questionSelect" }
                 ]
             },
             "additionalProperties": false
@@ -438,7 +430,7 @@
             },
             "additionalProperties": false
         },
-        "questionAskText": {
+        "questionText": {
             "type": "object",
             "properties": {
                 "id": {
@@ -449,10 +441,6 @@
                     "$ref": "#/definitions/condition"
                 },
                 "type": {
-                    "type": "string",
-                    "const": "ask"
-                },
-                "prompt": {
                     "type": "string",
                     "const": "text"
                 },
@@ -466,12 +454,8 @@
                 },
                 "default": {
                     "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        }
+                        { "type": "string" },
+                        { "type": "integer" }
                     ],
                     "default": ""
                 },
@@ -488,13 +472,12 @@
             },
             "required": [
                 "type",
-                "prompt",
                 "question",
                 "replace"
             ],
             "additionalProperties": false
         },
-        "questionAskSelect": {
+        "questionSelect": {
             "type": "object",
             "properties": {
                 "id": {
@@ -506,10 +489,6 @@
                 },
                 "type": {
                     "type": "string",
-                    "const": "ask"
-                },
-                "prompt": {
-                    "type": "string",
                     "const": "select"
                 },
                 "question": {
@@ -519,12 +498,8 @@
                 "options": {
                     "type": "array",
                     "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        },
+                        { "type": "string" },
+                        { "type": "integer" },
                         {
                             "type": "object",
                             "propertyNames": {
@@ -539,12 +514,8 @@
                 },
                 "default": {
                     "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        }
+                        { "type": "string" },
+                        { "type": "integer" }
                     ]
                 },
                 "replace": {
@@ -557,27 +528,21 @@
             },
             "required": [
                 "type",
-                "prompt",
                 "question",
                 "options",
                 "replace"
-            ]
+            ],
+            "additionalProperties": false
         },
         "valueReplace": {
             "oneOf": [
-                {
-                    "type": "string"
-                },
+                { "type": "string" },
                 {
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "number"
-                            }
+                            { "type": "string" },
+                            { "type": "number" }
                         ]
                     },
                     "uniqueItems": true,
@@ -590,9 +555,7 @@
         "validation": {
             "type": "array",
             "items": [
-                {
-                    "type": "string"
-                }
+                { "type": "string" }
             ],
             "default": null,
             "uniqueItems": true,

@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace PackageWizard\Installer\Fillers\Questions;
 
-use PackageWizard\Installer\Data\Questions\QuestionAskSelectData;
+use PackageWizard\Installer\Data\Questions\QuestionSelectData;
 use PackageWizard\Installer\Data\ReplaceData;
 use PackageWizard\Installer\Fillers\Filler;
 use Spatie\LaravelData\Data;
 
 use function Laravel\Prompts\select;
 
-/** @method static make(QuestionAskSelectData|Data $data) */
-class AskSelectFiller extends Filler
+/** @method static make(QuestionSelectData|Data $data) */
+class SelectFiller extends Filler
 {
     public function __construct(
-        protected QuestionAskSelectData $data
+        protected QuestionSelectData $data
     ) {}
 
     public function get(): ReplaceData

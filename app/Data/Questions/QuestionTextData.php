@@ -9,15 +9,12 @@ use PackageWizard\Installer\Data\Casts\PlaceholderCast;
 use PackageWizard\Installer\Data\Casts\ToStringCast;
 use PackageWizard\Installer\Data\Casts\TranslatableCast;
 use PackageWizard\Installer\Data\Casts\ValidationCast;
-use PackageWizard\Installer\Enums\PromptEnum;
 use PackageWizard\Installer\Enums\TypeEnum;
 use Spatie\LaravelData\Attributes\WithCast;
 
-class QuestionAskTextData extends QuestionData
+class QuestionTextData extends QuestionData
 {
-    public TypeEnum $type = TypeEnum::Ask;
-
-    public PromptEnum $prompt = PromptEnum::Text;
+    public TypeEnum $type = TypeEnum::Text;
 
     #[WithCast(ArrayWrapCast::class)]
     public array $replace;

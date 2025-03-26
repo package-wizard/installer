@@ -6,7 +6,7 @@ namespace PackageWizard\Installer\Fillers\Questions;
 
 use Closure;
 use Illuminate\Support\Str;
-use PackageWizard\Installer\Data\Questions\QuestionAskTextData;
+use PackageWizard\Installer\Data\Questions\QuestionTextData;
 use PackageWizard\Installer\Data\ReplaceData;
 use PackageWizard\Installer\Fillers\Filler;
 use PackageWizard\Installer\Helpers\ValidationHelper;
@@ -14,11 +14,11 @@ use Spatie\LaravelData\Data;
 
 use function Laravel\Prompts\text;
 
-/** @method static make(QuestionAskTextData|Data $data) */
-class AskTextFiller extends Filler
+/** @method static make(QuestionTextData|Data $data) */
+class TextFiller extends Filler
 {
     public function __construct(
-        protected QuestionAskTextData $data
+        protected QuestionTextData $data
     ) {}
 
     public function get(): ?ReplaceData
