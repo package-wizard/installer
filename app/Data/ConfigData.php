@@ -22,9 +22,6 @@ class ConfigData extends Data
     #[DataCollectionOf(AuthorData::class)]
     public Collection $authors;
 
-    #[WithCast(VariablesCast::class)]
-    public Collection $variables;
-
     #[DataCollectionOf(RenameData::class)]
     public Collection $renames;
 
@@ -36,6 +33,9 @@ class ConfigData extends Data
     #[DataCollectionOf(ReplaceData::class)]
     public Collection $replaces;
 
+    #[WithCast(VariablesCast::class)]
+    public Collection $variables;
+
     #[DataCollectionOf(DependencyData::class)]
     public Collection $dependencies;
 
@@ -46,11 +46,11 @@ class ConfigData extends Data
     {
         $properties['wizard']       ??= [];
         $properties['authors']      ??= [];
-        $properties['variables']    ??= [];
         $properties['renames']      ??= [];
         $properties['copies']       ??= [];
         $properties['removes']      ??= [];
         $properties['replaces']     ??= [];
+        $properties['variables']    ??= [];
         $properties['dependencies'] ??= [];
         $properties['questions']    ??= [];
 

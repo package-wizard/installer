@@ -9,11 +9,10 @@ use Illuminate\Support\Str;
 use PackageWizard\Installer\Data\Questions\QuestionAskTextData;
 use PackageWizard\Installer\Data\ReplaceData;
 use PackageWizard\Installer\Fillers\Filler;
+use PackageWizard\Installer\Helpers\ValidationHelper;
 use Spatie\LaravelData\Data;
 
-use function blank;
 use function Laravel\Prompts\text;
-use function trim;
 
 /** @method static make(QuestionAskTextData|Data $data) */
 class AskTextFiller extends Filler
@@ -43,35 +42,21 @@ class AskTextFiller extends Filler
             default    : $this->data->default,
             required   : $this->data->required,
             validate   : $this->validator(),
-            hint    : ! $this->data->required ? __('form.hint.enter') : '',
+            hint       : ! $this->data->required ? __('form.hint.enter') : '',
         );
     }
 
     protected function cleanup(string $value): string
     {
-        if ($this->data->trim) {
-            return trim($value);
-        }
-
-        return $value;
+        return Str::of($value)->squish()->trim()->toString();
     }
 
     protected function validator(): ?Closure
     {
-        if (! $this->data->regex) {
+        if (! $this->data->validation) {
             return null;
         }
 
-        return function (string $value): ?string {
-            if (! $this->data->required && blank($value)) {
-                return null;
-            }
-
-            if (Str::isMatch($this->data->regex, $value)) {
-                return null;
-            }
-
-            return __('validation.format', ['format' => $this->data->regex]);
-        };
+        return fn (string $value) => ValidationHelper::validated($value, $this->data->validation);
     }
 }

@@ -1,0 +1,203 @@
+{
+    "$schema": "schema-v2.json",
+    "wizard": {
+        "manager": {
+            "composer": true,
+            "npm": true,
+            "yarn": false
+        },
+        "localization": "en",
+        "clean": true
+    },
+    "authors": [
+        { },
+        {
+            "name": "John Doe",
+            "email": "john@example.com",
+            "replace": ":author:",
+            "with": ":name: <:email:>"
+        },
+        {
+            "replace": [":foo:", ":bar:"],
+            "with": ":name: <:email:>"
+        }
+    ],
+    "renames": [
+        {
+            "type": "name",
+            "source": "some",
+            "target": "bar"
+        },
+        {
+            "type": "path",
+            "source": "foo/bar.stub",
+            "target": "qwe/rty.txt"
+        }
+    ],
+    "copies": [
+        {
+            "source": "foo/",
+            "target": "bar/"
+        },
+        {
+            "source": "foo.stub",
+            "target": "bar.txt"
+        },
+        {
+            "source": "../../foo/bar.jpg",
+            "target": "qwe/rty.jpg"
+        }
+    ],
+    "removes": [
+        "foo/",
+        "bar/baz.jpg"
+    ],
+    "replaces": [
+        {
+            "replace": "foo",
+            "with": "bar"
+        },
+        {
+            "replace": ["qwe", "rty", 123],
+            "with": 12345
+        }
+    ],
+    "variables": [
+        {
+            "type": "year"
+        },
+        {
+            "type": "year",
+            "replace": ["%year%", "2021-:year:"]
+        },
+        {
+            "type": "yearRange",
+            "start": 1970
+        },
+        {
+            "type": "yearRange",
+            "start": 2021,
+            "replace": ":year:"
+        },
+        {
+            "type": "yearRange",
+            "start": 2021,
+            "replace": ["%year%", 1970]
+        },
+        {
+            "type": "date"
+        },
+        {
+            "type": "date",
+            "replace": ":date:",
+            "with": "Y-m-d"
+        }
+    ],
+    "dependencies": [
+        {
+            "name": "dragon-code/laravel-deploy-operations"
+        },
+        {
+            "type": "composer",
+            "name": "dragon-code/laravel-data-dumper",
+            "dev": true
+        },
+        {
+            "type": "composer",
+            "name": "laravel/sail",
+            "dev": true,
+            "remove": true
+        },
+        {
+            "type": "npm",
+            "name": "axios",
+            "dev": true
+        },
+        {
+            "type": "yarn",
+            "name": "axios",
+            "dev": true
+        }
+    ],
+    "questions": [
+        {
+            "type": "author"
+        },
+        {
+            "id": "author123",
+            "type": "author",
+            "author": {
+                "name": "John Doe",
+                "email": "john@example.com"
+            },
+            "replace": [":author:", ":foo:"],
+            "with": ":name: <:email:>"
+        },
+        {
+            "id": "license123",
+            "type": "license",
+            "replace": ":license:",
+            "key": {
+                "replace": ":licenseKey:"
+            },
+            "file": {
+                "replace": [":licensePath:", "(LICENSE)"],
+                "path": "LICENSE.md"
+            }
+        },
+        {
+            "condition": {
+                "for": "license123",
+                "operator": "!=",
+                "value": "MIT License"
+            },
+            "type": "ask",
+            "prompt": "text",
+            "question": "Some question",
+            "replace": ":some_answer:",
+            "placeholder": "Some kind of auxiliary information"
+        },
+        {
+            "condition": {
+                "for": "author123",
+                "value": "John Doe <john@example.com>"
+            },
+            "type": "ask",
+            "prompt": "text",
+            "question": "form.question.name",
+            "placeholder": "form.eg.name",
+            "default": "foo",
+            "replace": ":some_answer:",
+            "required": true,
+            "validation": [
+                "min:3",
+                "max:60"
+            ]
+        },
+        {
+            "type": "ask",
+            "prompt": "select",
+            "question": "Select one of the options",
+            "options": [100, 200, "300", "400"],
+            "replace": ":foo:"
+        },
+        {
+            "type": "ask",
+            "prompt": "select",
+            "question": "Select one of the options",
+            "options": [100, 200, 300, 400],
+            "replace": ":foo:"
+        },
+        {
+            "type": "ask",
+            "prompt": "select",
+            "question": "Select one of the options",
+            "options": {
+                "100": "foo",
+                "200": "bar"
+            },
+            "default": "bar",
+            "replace": ":foo:"
+        }
+    ]
+}
