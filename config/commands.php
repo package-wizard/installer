@@ -22,8 +22,14 @@ return [
         Illuminate\Foundation\Console\VendorPublishCommand::class,
         LaravelZero\Framework\Commands\StubPublishCommand::class,
 
+        LaravelLang\Publisher\Console\Update::class,
+
         LicensesCommand::class,
     ],
 
-    'remove' => [],
+    'remove' => [
+        LaravelLang\Publisher\Console\Add::class,
+        LaravelLang\Publisher\Console\Remove::class,
+        LaravelLang\Publisher\Console\Reset::class,
+    ],
 ];
