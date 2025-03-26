@@ -466,8 +466,12 @@
                 },
                 "default": {
                     "oneOf": [
-                        { "type": "string" },
-                        { "type": "integer" }
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "integer"
+                        }
                     ],
                     "default": ""
                 },
@@ -515,11 +519,17 @@
                 "options": {
                     "type": "array",
                     "anyOf": [
-                        { "type": "string" },
-                        { "type": "integer" },
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "integer"
+                        },
                         {
                             "type": "object",
-                            "propertyNames": { "type": "string" },
+                            "propertyNames": {
+                                "type": "string"
+                            },
                             "additionalProperties": false
                         }
                     ],
@@ -529,8 +539,12 @@
                 },
                 "default": {
                     "oneOf": [
-                        { "type": "string" },
-                        { "type": "integer" }
+                        {
+                            "type": "string"
+                        },
+                        {
+                            "type": "integer"
+                        }
                     ]
                 },
                 "replace": {
@@ -558,8 +572,12 @@
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            { "type": "string" },
-                            { "type": "number" }
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "number"
+                            }
                         ]
                     },
                     "uniqueItems": true,
@@ -572,7 +590,9 @@
         "validation": {
             "type": "array",
             "items": [
-                { "type": "string" }
+                {
+                    "type": "string"
+                }
             ],
             "default": null,
             "uniqueItems": true,
