@@ -19,7 +19,7 @@ To get the latest version of `Package Wizard`, simply require the project using 
 composer global require package-wizard/installer:*
 ```
 
-## Using
+## Basic Usage
 
 Once in the folder, call the `paw` console command and follow the prompts.
 
