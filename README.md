@@ -29,6 +29,22 @@ The wizard will ask some questions and generate initial files for your project.
 paw
 ```
 
+### Most Popular Commands
+
+```bash
+paw package-wizard/laravel
+paw package-wizard/writerside
+paw package-wizard/console
+package-wizard/composer
+
+paw moonshine/app
+
+paw laravel/laravel
+paw laravel/livewire-starter-kit
+paw laravel/vue-starter-kit
+paw laravel/react-starter-kit
+```
+
 ## Documentation
 
 See the [documentation](https://package-wizard.com) for detailed installation instructions.
