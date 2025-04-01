@@ -35,7 +35,7 @@ paw
 paw package-wizard/laravel
 paw package-wizard/writerside
 paw package-wizard/console
-package-wizard/composer
+paw package-wizard/composer
 
 paw moonshine/app
 
