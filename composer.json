@@ -37,20 +37,20 @@
         "ext-json": "*"
     },
     "require-dev": {
-        "archtechx/enums": "^1.1",
+        "archtechx/enums": "^1.1.2",
         "dragon-code/support": "^6.16",
-        "illuminate/http": "^11.44.2",
-        "illuminate/translation": "^11.44.2",
-        "illuminate/validation": "^11.44",
-        "justinrainbow/json-schema": "^6.3.1",
-        "laravel-lang/lang": "^15.19.8",
-        "laravel-zero/framework": "^11.36.1",
-        "laravel/prompts": "^0.3.5",
+        "illuminate/http": "^12.20",
+        "illuminate/translation": "^12.20",
+        "illuminate/validation": "^12.20",
+        "justinrainbow/json-schema": "^6.4.2",
+        "laravel-lang/lang": "^15.22.5",
+        "laravel-zero/framework": "^12.0",
+        "laravel/prompts": "~0.3.6",
         "mockery/mockery": "^1.6.12",
-        "peckphp/peck": "^0.1.2",
-        "pestphp/pest": "^3.7.4",
-        "pestphp/pest-plugin-type-coverage": "^3.4",
-        "spatie/laravel-data": "^4.14.1"
+        "peckphp/peck": "^0.1.3",
+        "pestphp/pest": "^3.8.2",
+        "pestphp/pest-plugin-type-coverage": "^3.6",
+        "spatie/laravel-data": "^4.17.0"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
@@ -81,7 +81,7 @@
         "sort-packages": true
     },
     "scripts": {
-        "style": "codestyle",
+        "style": "codestyle --parallel",
         "test": [
             "@test:coverage",
             "@test:types",
