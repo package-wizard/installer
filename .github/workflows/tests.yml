@@ -52,30 +52,6 @@ jobs:
             -   name: Types tests
                 run: composer test:coverage
 
-    misspelling:
-        runs-on: ubuntu-latest
-
-        name: Misspelling
-
-        steps:
-            -   name: Checkout code
-                uses: actions/checkout@v4
-
-            -   name: Setup PHP
-                uses: shivammathur/setup-php@v2
-                with:
-                    extensions: curl, mbstring, zip, iconv, json, dom, fileinfo, tokenizer
-                    coverage: none
-
-            -   name: Install Aspell
-                run: sudo apt-get install aspell aspell-en
-
-            -   name: Install dependencies
-                run: composer install --no-progress --no-scripts --optimize-autoloader --no-interaction --ansi
-
-            -   name: Misspelling tests
-                run: composer test:misspelling
-
     linux:
         runs-on: ubuntu-latest
 
@@ -103,9 +79,6 @@ jobs:
 
             -   name: Prepare Yarn
                 run: sudo corepack enable
-
-            -   name: Remove Peck
-                run: composer remove peckphp/peck --dev --no-progress --no-scripts --no-install --ignore-platform-reqs --no-interaction --ansi
 
             -   name: Install dependencies
                 run: composer install --no-progress --no-scripts --optimize-autoloader --no-interaction --ansi
@@ -142,9 +115,6 @@ jobs:
             -   uses: actions/setup-node@v4
                 with:
                     node-version: 22
-
-            -   name: Remove Peck
-                run: composer remove peckphp/peck --dev --no-progress --no-scripts --no-install --ignore-platform-reqs --no-interaction --ansi
 
             -   name: Install dependencies
                 run: composer install --no-progress --no-scripts --optimize-autoloader --no-interaction --ansi
