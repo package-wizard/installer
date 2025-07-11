@@ -43,9 +43,6 @@ jobs:
                     ini-values: error_reporting=E_ALL
                     coverage: none
 
-            -   name: Remove Peck
-                run: composer remove peckphp/peck --dev --no-progress --no-scripts --no-install --ignore-platform-reqs --no-interaction --ansi
-
             -   name: Install dependencies
                 run: composer install --prefer-dist --no-progress --no-interaction --no-suggest
 
