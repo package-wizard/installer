@@ -17,9 +17,9 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(Composer::class, function () {
-            return new Composer(new Filesystem(), getcwd() ?: realpath('.'));
+            return new Composer(new Filesystem, getcwd() ?: realpath('.'));
         });
 
-        $this->app->singleton(Console::class, fn () => new Console());
+        $this->app->singleton(Console::class, fn () => new Console);
     }
 }

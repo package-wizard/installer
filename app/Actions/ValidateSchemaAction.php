@@ -57,6 +57,6 @@ class ValidateSchemaAction extends Action
 
     protected function validator(): SchemaValidatorService
     {
-        return new SchemaValidatorService();
+        return new SchemaValidatorService;
     }
 }

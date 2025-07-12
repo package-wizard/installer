@@ -13,7 +13,7 @@ use function PackageWizard\Installer\resource_path;
 class SchemaValidatorService
 {
     public function __construct(
-        protected Validator $schema = new Validator()
+        protected Validator $schema = new Validator
     ) {}
 
     public function validate(stdClass $data): void

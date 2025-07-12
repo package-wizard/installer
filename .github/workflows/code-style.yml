@@ -23,7 +23,10 @@ jobs:
                     coverage: none
 
             -   name: Install dependency
-                run: composer global require dragon-code/codestyler
+                run: composer install
+
+            -   name: Styling
+                run: vendor/bin/pint --parallel --test
 
     fix:
         runs-on: ubuntu-latest
@@ -42,26 +45,11 @@ jobs:
                     extensions: curl, mbstring, zip, iconv, json, dom, fileinfo, tokenizer
                     coverage: none
 
-            -   name: Setup Composer
-                run: |
-                    composer global config --no-plugins allow-plugins.dragon-code/codestyler true
-                    composer global config --no-plugins allow-plugins.ergebnis/composer-normalize true
-                    
-                    composer config --no-plugins allow-plugins.dragon-code/codestyler true
-                    composer config --no-plugins allow-plugins.ergebnis/composer-normalize true
+            -   name: Install dependency
+                run: composer install
 
-            -   name: Install dependencies
-                run: |
-                    composer global require dragon-code/codestyler
-                    composer global require ergebnis/composer-normalize
-
-            -   name: Fix the code-style
-                run: |
-                    codestyle editorconfig
-                    codestyle dependabot
-                    codestyle --parallel
-
-                    composer normalize
+            -   name: Styling
+                run: composer style
 
             -   name: Create a Pull Request
                 uses: peter-evans/create-pull-request@v7

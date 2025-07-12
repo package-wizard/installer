@@ -110,6 +110,6 @@ class QuestionsAction extends Action
 
     protected function comparator(): ComparatorService
     {
-        return $this->comparator ??= new ComparatorService();
+        return $this->comparator ??= new ComparatorService;
     }
 }
