@@ -10,7 +10,7 @@
         "clean": true
     },
     "authors": [
-        [],
+        { },
         {
             "name": "John Doe",
             "email": "john@example.com",

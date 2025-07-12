@@ -43,15 +43,9 @@
             "type": "array",
             "items": {
                 "anyOf": [
-                    {
-                        "$ref": "#/definitions/variableYear"
-                    },
-                    {
-                        "$ref": "#/definitions/variableYearRange"
-                    },
-                    {
-                        "$ref": "#/definitions/variableDate"
-                    }
+                    { "$ref": "#/definitions/variableYear" },
+                    { "$ref": "#/definitions/variableYearRange" },
+                    { "$ref": "#/definitions/variableDate" }
                 ]
             },
             "additionalProperties": false
@@ -67,18 +61,10 @@
             "type": "array",
             "items": {
                 "anyOf": [
-                    {
-                        "$ref": "#/definitions/questionAuthor"
-                    },
-                    {
-                        "$ref": "#/definitions/questionLicense"
-                    },
-                    {
-                        "$ref": "#/definitions/questionText"
-                    },
-                    {
-                        "$ref": "#/definitions/questionSelect"
-                    }
+                    { "$ref": "#/definitions/questionAuthor" },
+                    { "$ref": "#/definitions/questionLicense" },
+                    { "$ref": "#/definitions/questionText" },
+                    { "$ref": "#/definitions/questionSelect" }
                 ]
             },
             "additionalProperties": false
@@ -89,7 +75,7 @@
             "type": "object",
             "properties": {
                 "manager": {
-                    "$ref": "#/definitions/wizardManager"
+                    "$ref": "#/definitions/dependencyManager"
                 },
                 "clean": {
                     "type": "boolean",
@@ -102,7 +88,7 @@
             },
             "additionalProperties": false
         },
-        "wizardManager": {
+        "dependencyManager": {
             "type": "object",
             "properties": {
                 "composer": {
@@ -125,23 +111,15 @@
             "properties": {
                 "name": {
                     "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
+                        { "type": "string" },
+                        { "type": "null" }
                     ],
                     "default": null
                 },
                 "email": {
                     "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "null"
-                        }
+                        { "type": "string" },
+                        { "type": "null" }
                     ],
                     "with": "email",
                     "default": null
@@ -167,12 +145,8 @@
                         "name"
                     ]
                 },
-                "source": {
-                    "type": "string"
-                },
-                "target": {
-                    "type": "string"
-                }
+                "source": { "type": "string" },
+                "target": { "type": "string" }
             },
             "required": [
                 "type",
@@ -185,12 +159,8 @@
         "copy": {
             "type": "object",
             "properties": {
-                "source": {
-                    "type": "string"
-                },
-                "target": {
-                    "type": "string"
-                }
+                "source": { "type": "string" },
+                "target": { "type": "string" }
             },
             "required": [
                 "source",
@@ -201,9 +171,7 @@
         },
         "remove": {
             "items": [
-                {
-                    "type": "string"
-                }
+                { "type": "string" }
             ],
             "uniqueItems": true,
             "additionalProperties": false
@@ -216,12 +184,8 @@
                 },
                 "with": {
                     "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        }
+                        { "type": "string" },
+                        { "type": "integer" }
                     ]
                 }
             },
@@ -342,23 +306,15 @@
                     "properties": {
                         "name": {
                             "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "null"
-                                }
+                                { "type": "string" },
+                                { "type": "null" }
                             ],
                             "default": null
                         },
                         "email": {
                             "oneOf": [
-                                {
-                                    "type": "string"
-                                },
-                                {
-                                    "type": "null"
-                                }
+                                { "type": "string" },
+                                { "type": "null" }
                             ],
                             "with": "email",
                             "default": null
@@ -462,12 +418,8 @@
                 },
                 "default": {
                     "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        }
+                        { "type": "string" },
+                        { "type": "integer" }
                     ],
                     "default": ""
                 },
@@ -510,12 +462,8 @@
                 "options": {
                     "type": "array",
                     "anyOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        },
+                        { "type": "string" },
+                        { "type": "integer" },
                         {
                             "type": "object",
                             "propertyNames": {
@@ -530,12 +478,8 @@
                 },
                 "default": {
                     "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        }
+                        { "type": "string" },
+                        { "type": "integer" }
                     ]
                 },
                 "replace": {
@@ -556,19 +500,13 @@
         },
         "valueReplace": {
             "oneOf": [
-                {
-                    "type": "string"
-                },
+                { "type": "string" },
                 {
                     "type": "array",
                     "items": {
                         "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "number"
-                            }
+                            { "type": "string" },
+                            { "type": "number" }
                         ]
                     },
                     "uniqueItems": true,
@@ -581,9 +519,7 @@
         "validation": {
             "type": "array",
             "items": [
-                {
-                    "type": "string"
-                }
+                { "type": "string" }
             ],
             "default": null,
             "uniqueItems": true,
@@ -595,18 +531,10 @@
                     "type": "boolean",
                     "const": true
                 },
-                {
-                    "$ref": "#/definitions/comparatorDefault"
-                },
-                {
-                    "$ref": "#/definitions/comparatorString"
-                },
-                {
-                    "$ref": "#/definitions/comparatorList"
-                },
-                {
-                    "$ref": "#/definitions/comparatorPath"
-                }
+                { "$ref": "#/definitions/comparatorDefault" },
+                { "$ref": "#/definitions/comparatorString" },
+                { "$ref": "#/definitions/comparatorList" },
+                { "$ref": "#/definitions/comparatorPath" }
             ]
         },
         "comparatorDefault": {
@@ -629,12 +557,8 @@
                 },
                 "value": {
                     "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        }
+                        { "type": "string" },
+                        { "type": "integer" }
                     ],
                     "additionalProperties": false
                 }
@@ -662,22 +586,14 @@
                 },
                 "value": {
                     "oneOf": [
-                        {
-                            "type": "string"
-                        },
-                        {
-                            "type": "integer"
-                        },
+                        { "type": "string" },
+                        { "type": "integer" },
                         {
                             "type": "array",
                             "items": {
                                 "oneOf": [
-                                    {
-                                        "type": "string"
-                                    },
-                                    {
-                                        "type": "number"
-                                    }
+                                    { "type": "string" },
+                                    { "type": "number" }
                                 ]
                             },
                             "additionalProperties": false
@@ -709,12 +625,8 @@
                 "value": {
                     "items": {
                         "anyOf": [
-                            {
-                                "type": "string"
-                            },
-                            {
-                                "type": "integer"
-                            }
+                            { "type": "string" },
+                            { "type": "integer" }
                         ],
                         "additionalProperties": false
                     },
