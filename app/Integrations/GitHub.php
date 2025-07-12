@@ -14,10 +14,10 @@ use function config;
 class GitHub
 {
     /**
+     * @return Collection<LicenseData>
+     *
      * @throws \Illuminate\Http\Client\ConnectionException
      * @throws \Illuminate\Http\Client\RequestException
-     *
-     * @return Collection<LicenseData>
      */
     public function licenses(): Collection
     {

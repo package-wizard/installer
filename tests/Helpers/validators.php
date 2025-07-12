@@ -6,7 +6,7 @@ use PackageWizard\Installer\Services\SchemaValidatorService;
 
 function validateSchema(string $filename): void
 {
-    $validator = new SchemaValidatorService();
+    $validator = new SchemaValidatorService;
 
     $validator->validate(rule($filename));
 }

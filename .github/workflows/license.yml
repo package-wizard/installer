@@ -23,15 +23,13 @@ jobs:
                     coverage: none
 
             -   name: Install dependencies
-                run: |
-                    composer update --prefer-stable --prefer-dist --no-progress --no-interaction
-                    composer global require dragon-code/codestyler
+                run: composer install
 
             -   name: Download
                 run: php ./paw licenses
 
             -   name: Code-Style
-                run: codestyle
+                run: composer style
 
             -   name: Create a Pull Request
                 uses: peter-evans/create-pull-request@v7

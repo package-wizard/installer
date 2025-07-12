@@ -38,6 +38,7 @@
     },
     "require-dev": {
         "archtechx/enums": "^1.1.2",
+        "dragon-code/codestyler": "^6.0",
         "dragon-code/support": "^6.16",
         "illuminate/http": "^12.20",
         "illuminate/translation": "^12.20",
@@ -80,7 +81,12 @@
         "sort-packages": true
     },
     "scripts": {
-        "style": "codestyle --parallel",
+        "post-update-cmd": [
+            "cp vendor/dragon-code/codestyler/presets/pint/8.4.json pint.json",
+            "cp vendor/dragon-code/codestyler/.editorconfig .editorconfig",
+            "composer normalize"
+        ],
+        "style": "vendor/bin/pint --parallel",
         "test": [
             "@test:coverage",
             "@test:types",

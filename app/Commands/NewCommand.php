@@ -203,15 +203,13 @@ class NewCommand extends Command
                 DownloadProjectAction::Dev     => $isDev,
                 Action::Directory              => $directory,
             ]);
-        }
-        elseif (Directory::doesntExist($directory)) {
+        } elseif (Directory::doesntExist($directory)) {
             warning(__('validation.doesnt_exist.directory', ['path' => $directory]));
 
             $directory = $this->getInstallationDirectory(
                 DirectoryFiller::make(local: true)
             );
-        }
-        elseif (! is_readable($directory)) {
+        } elseif (! is_readable($directory)) {
             warning(__('validation.no_access', ['path' => $directory]));
 
             $directory = $this->getInstallationDirectory(

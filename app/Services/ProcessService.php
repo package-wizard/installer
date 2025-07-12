@@ -63,8 +63,7 @@ class ProcessService
         if ('\\' !== DIRECTORY_SEPARATOR && file_exists('/dev/tty') && is_readable('/dev/tty')) {
             try {
                 $process->setTty(true);
-            }
-            catch (RuntimeException $e) {
+            } catch (RuntimeException $e) {
                 warning($e->getMessage());
             }
         }
