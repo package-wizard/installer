@@ -4057,7 +4057,7 @@
         },
         {
             "name": "illuminate/translation",
-            "version": "v12.20.0",
+            "version": "v12.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/translation.git",
@@ -4108,16 +4108,16 @@
         },
         {
             "name": "illuminate/validation",
-            "version": "v12.20.0",
+            "version": "v12.21.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
-                "reference": "cb0e2d727b0eb709d7bab02ce886bf4d94852b50"
+                "reference": "1017ed97c6852c2837e0bc405600448b6556ae8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/validation/zipball/cb0e2d727b0eb709d7bab02ce886bf4d94852b50",
-                "reference": "cb0e2d727b0eb709d7bab02ce886bf4d94852b50",
+                "url": "https://api.github.com/repos/illuminate/validation/zipball/1017ed97c6852c2837e0bc405600448b6556ae8e",
+                "reference": "1017ed97c6852c2837e0bc405600448b6556ae8e",
                 "shasum": ""
             },
             "require": {
@@ -4166,7 +4166,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-07-07T14:03:00+00:00"
+            "time": "2025-07-18T16:05:41+00:00"
         },
         {
             "name": "illuminate/view",
