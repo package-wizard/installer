@@ -1507,24 +1507,37 @@
         },
         {
             "name": "dragon-code/codestyler",
-            "version": "6.0.0",
+            "version": "6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TheDragonCode/codestyler.git",
-                "reference": "66886d8d540bc9680e6e20166ea62ee767f0b6bb"
+                "reference": "f13acbe2cba7a1c9085fafd986e044215848596d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TheDragonCode/codestyler/zipball/66886d8d540bc9680e6e20166ea62ee767f0b6bb",
-                "reference": "66886d8d540bc9680e6e20166ea62ee767f0b6bb",
+                "url": "https://api.github.com/repos/TheDragonCode/codestyler/zipball/f13acbe2cba7a1c9085fafd986e044215848596d",
+                "reference": "f13acbe2cba7a1c9085fafd986e044215848596d",
                 "shasum": ""
             },
             "require": {
                 "ergebnis/composer-normalize": "^2.47",
+                "ext-json": "*",
                 "laravel/pint": "^1.24",
-                "php": "^8.2"
+                "php": "^8.2",
+                "symfony/console": "^7.3"
             },
+            "require-dev": {
+                "symfony/var-dumper": "^7.3"
+            },
+            "bin": [
+                "bin/codestyle"
+            ],
             "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DragonCode\\Codestyler\\": "src/"
+                }
+            },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
@@ -1565,7 +1578,7 @@
                     "type": "yoomoney"
                 }
             ],
-            "time": "2025-07-11T18:08:13+00:00"
+            "time": "2025-08-13T15:39:25+00:00"
         },
         {
             "name": "dragon-code/contracts",
