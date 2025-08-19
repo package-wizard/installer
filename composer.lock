@@ -3117,7 +3117,7 @@
         },
         {
             "name": "illuminate/bus",
-            "version": "v12.23.1",
+            "version": "v12.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/bus.git",
@@ -3336,7 +3336,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v12.23.1",
+            "version": "v12.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -3384,16 +3384,16 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v12.23.1",
+            "version": "v12.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
-                "reference": "e997deb5c4854e1990d59d4b58c9088a65657e54"
+                "reference": "4e70ad2ddbeee0118332cb72ed6234cc82e46688"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/console/zipball/e997deb5c4854e1990d59d4b58c9088a65657e54",
-                "reference": "e997deb5c4854e1990d59d4b58c9088a65657e54",
+                "url": "https://api.github.com/repos/illuminate/console/zipball/4e70ad2ddbeee0118332cb72ed6234cc82e46688",
+                "reference": "4e70ad2ddbeee0118332cb72ed6234cc82e46688",
                 "shasum": ""
             },
             "require": {
@@ -3446,7 +3446,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-08-04T20:23:05+00:00"
+            "time": "2025-08-17T19:50:16+00:00"
         },
         {
             "name": "illuminate/container",
@@ -3549,7 +3549,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v12.23.1",
+            "version": "v12.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -3779,7 +3779,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v12.23.1",
+            "version": "v12.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -4191,7 +4191,7 @@
         },
         {
             "name": "illuminate/view",
-            "version": "v12.23.1",
+            "version": "v12.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -4629,16 +4629,16 @@
         },
         {
             "name": "laravel-lang/lang",
-            "version": "15.22.8",
+            "version": "15.23.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/lang.git",
-                "reference": "cc45f0d1df17c3521429cfae9b78b42ae7b2ad32"
+                "reference": "31025ed0c7922ef1b10d1e967b2f7c11e6ddfbdf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/cc45f0d1df17c3521429cfae9b78b42ae7b2ad32",
-                "reference": "cc45f0d1df17c3521429cfae9b78b42ae7b2ad32",
+                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/31025ed0c7922ef1b10d1e967b2f7c11e6ddfbdf",
+                "reference": "31025ed0c7922ef1b10d1e967b2f7c11e6ddfbdf",
                 "shasum": ""
             },
             "require": {
@@ -4650,6 +4650,7 @@
                 "laravel/framework": "<11.0.7"
             },
             "require-dev": {
+                "dragon-code/codestyler": "^6.0",
                 "laravel-lang/status-generator": "^2.11",
                 "phpunit/phpunit": "^10.0 || ^11.0 || ^12.0",
                 "symfony/var-dumper": "^7.0"
@@ -4688,7 +4689,7 @@
                 "issues": "https://github.com/Laravel-Lang/lang/issues",
                 "source": "https://github.com/Laravel-Lang/lang"
             },
-            "time": "2025-08-09T14:38:01+00:00"
+            "time": "2025-08-17T16:09:10+00:00"
         },
         {
             "name": "laravel-lang/locale-list",
