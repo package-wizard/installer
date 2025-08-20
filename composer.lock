@@ -4629,16 +4629,16 @@
         },
         {
             "name": "laravel-lang/lang",
-            "version": "15.23.0",
+            "version": "15.23.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Lang/lang.git",
-                "reference": "31025ed0c7922ef1b10d1e967b2f7c11e6ddfbdf"
+                "reference": "b596bafc751f109cb1b57d10c4e9abb576414034"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/31025ed0c7922ef1b10d1e967b2f7c11e6ddfbdf",
-                "reference": "31025ed0c7922ef1b10d1e967b2f7c11e6ddfbdf",
+                "url": "https://api.github.com/repos/Laravel-Lang/lang/zipball/b596bafc751f109cb1b57d10c4e9abb576414034",
+                "reference": "b596bafc751f109cb1b57d10c4e9abb576414034",
                 "shasum": ""
             },
             "require": {
@@ -4689,7 +4689,7 @@
                 "issues": "https://github.com/Laravel-Lang/lang/issues",
                 "source": "https://github.com/Laravel-Lang/lang"
             },
-            "time": "2025-08-17T16:09:10+00:00"
+            "time": "2025-08-19T16:04:32+00:00"
         },
         {
             "name": "laravel-lang/locale-list",
