@@ -3447,25 +3447,35 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v12.25.0",
+            "version": "v12.26.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "81d62ed4eef2d8d838cdf172aedcff2a78deaed0"
+                "reference": "e1b1266e79e38998879123476618b9a8dce43629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/81d62ed4eef2d8d838cdf172aedcff2a78deaed0",
-                "reference": "81d62ed4eef2d8d838cdf172aedcff2a78deaed0",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/e1b1266e79e38998879123476618b9a8dce43629",
+                "reference": "e1b1266e79e38998879123476618b9a8dce43629",
                 "shasum": ""
             },
             "require": {
                 "illuminate/contracts": "^12.0",
                 "php": "^8.2",
-                "psr/container": "^1.1.1|^2.0.1"
+                "psr/container": "^1.1.1|^2.0.1",
+                "symfony/polyfill-php84": "^1.31",
+                "symfony/polyfill-php85": "^1.33"
             },
             "provide": {
                 "psr/container-implementation": "1.1|2.0"
+            },
+            "suggest": {
+                "illuminate/auth": "Required to use the Auth attribute",
+                "illuminate/cache": "Required to use the Cache attribute",
+                "illuminate/config": "Required to use the Config attribute",
+                "illuminate/database": "Required to use the DB attribute",
+                "illuminate/filesystem": "Required to use the Storage attribute",
+                "illuminate/log": "Required to use the Log or Context attributes"
             },
             "type": "library",
             "extra": {
@@ -3494,7 +3504,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-08-13T02:03:36+00:00"
+            "time": "2025-08-26T15:59:02+00:00"
         },
         {
             "name": "illuminate/contracts",
@@ -4126,16 +4136,16 @@
         },
         {
             "name": "illuminate/validation",
-            "version": "v12.25.0",
+            "version": "v12.26.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/validation.git",
-                "reference": "ce7f50900b2852f621c09bef641e71339faffd8b"
+                "reference": "4928b33d9bdd3a4c32e76920f0e67c222678dbea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/validation/zipball/ce7f50900b2852f621c09bef641e71339faffd8b",
-                "reference": "ce7f50900b2852f621c09bef641e71339faffd8b",
+                "url": "https://api.github.com/repos/illuminate/validation/zipball/4928b33d9bdd3a4c32e76920f0e67c222678dbea",
+                "reference": "4928b33d9bdd3a4c32e76920f0e67c222678dbea",
                 "shasum": ""
             },
             "require": {
@@ -4185,7 +4195,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-08-13T16:46:48+00:00"
+            "time": "2025-08-26T16:27:07+00:00"
         },
         {
             "name": "illuminate/view",
