@@ -78,7 +78,7 @@ jobs:
                     ini-values: error_reporting=E_ALL
                     coverage: none
 
-            -   uses: actions/download-artifact@v4
+            -   uses: actions/download-artifact@v5
                 with:
                     name: paw
                     path: builds
@@ -98,7 +98,7 @@ jobs:
             -   name: Remove old file
                 run: rm -f builds/paw
 
-            -   uses: actions/download-artifact@v4
+            -   uses: actions/download-artifact@v5
                 with:
                     name: paw
                     path: builds
