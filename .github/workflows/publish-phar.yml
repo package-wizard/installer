@@ -37,7 +37,7 @@ jobs:
                     coverage: none
 
             -   name: Upload the PHAR artifact
-                uses: actions/upload-artifact@v5
+                uses: actions/upload-artifact@v6
                 with:
                     name: paw.phar
                     path: builds/paw
