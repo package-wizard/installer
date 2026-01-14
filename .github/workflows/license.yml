@@ -1,45 +1,10 @@
-name: Update licenses
+name: Update license
 
 on:
-    schedule:
-        -   cron: '0 3 1 1 *'
-    workflow_dispatch:
+  schedule:
+    - cron: '0 3 1 1 *'
+  workflow_dispatch:
 
 jobs:
-    Readme:
-        uses: TheDragonCode/.github/.github/workflows/license.yml@main
-
-    List:
-        runs-on: ubuntu-latest
-
-        steps:
-            -   name: Checkout code
-                uses: actions/checkout@v6
-
-            -   name: Setup PHP
-                uses: shivammathur/setup-php@v2
-                with:
-                    extensions: curl, mbstring, zip, pcntl, pdo, pdo_sqlite, iconv, json
-                    coverage: none
-
-            -   name: Install dependencies
-                run: composer install
-
-            -   name: Download
-                run: php ./paw licenses
-
-            -   name: Code-Style
-                run: composer style
-
-            -   name: Create a Pull Request
-                uses: peter-evans/create-pull-request@v8
-                with:
-                    branch: projects/download
-                    branch-suffix: random
-                    delete-branch: true
-                    add-paths: resources/licenses
-                    title: "[source]: The list of licenses has been updated"
-                    commit-message: 🗝️ The list of licenses has been updated
-                    body: The list of licenses has been updated 💪
-                    labels: |
-                        source
+  Update:
+    uses: TheDragonCode/.github/.github/workflows/license.yml@main
